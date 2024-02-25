@@ -15,7 +15,7 @@ function PageMain() {
         state?.kycVerify?.methods.owner().call().then(setWalletAddressOfOwner);
         setAddressForBuying(state?.addressForBuying);
         updateBalanceOfKNT();
-        state?.token?.events.Transfer({ to: state?.accounts?.[0] }).on('data', (event) => {
+        state?.token?.events.Transfer({ to: state?.accounts?.[0] }).on('data', (_) => {
             updateBalanceOfKNT();
         });
     }, [state]);
@@ -41,6 +41,7 @@ function PageMain() {
                     <div className={styles.container}>
                         <h1>Konerd Token Sale</h1>
                         <h2>ERC-20 Protocol</h2>
+                        <p>This dapp will work with the Sepolia Ethereum Test Network</p>
                         <hr />
                         {state?.accounts?.[0] === walletAddressOfOwner && (
                             <div className={styles.addingKYCWhitelist}>
