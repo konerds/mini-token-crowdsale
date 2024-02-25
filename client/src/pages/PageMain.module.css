@@ -1,0 +1,64 @@
+.container {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.container h1,
+.container h2 {
+    text-align: center;
+}
+
+.container hr {
+    margin: 20px auto;
+}
+
+.container .addingKYCWhitelist div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.container .addingKYCWhitelist input[type='text'] {
+    flex: 1;
+}
+
+.container .addingKYCWhitelist button {
+    flex: 1;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px 10px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.container .addingKYCWhitelist button:hover {
+    background-color: black;
+    color: white;
+}
+
+.container .buyingKNT p {
+    margin-bottom: 10px;
+}
+
+.container .buyingKNT button {
+    margin-top: 10px;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+.container .buyingKNT button:hover {
+    opacity: 0.7;
+}
+
+.danger {
+    color: red;
+}

@@ -4,6 +4,9 @@
     "description": "Truffle project with SimpleStorage contract",
     "scripts": {
         "start:dev": "truffle develop",
+        "migrate:dev": "truffle migrate --network develop",
+        "migrate:goerli_infura": "truffle migrate --network goerli_infura",
+        "migrate:sepolia_infura": "truffle migrate --network sepolia_infura",
         "test": "truffle test"
     },
     "dependencies": {

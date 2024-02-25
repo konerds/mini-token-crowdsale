@@ -1,5 +1,3 @@
-require('dotenv').config({ path: '../.env' });
-
 const Token = artifacts.require('KonerdToken');
 const KYCVerify = artifacts.require('KYCVerify');
 const Crowdsale = artifacts.require('KonerdTokenCrowdsale');

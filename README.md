@@ -43,3 +43,15 @@ From there, follow the instructions on the hosted React app. It will walk you th
 Create ".env" file inside truffle folder, and add those below variables.
 
 -   INITIAL_SUPPLY (Default: 1000000)
+
+-   MNEMONIC
+
+    > When use HDWalletProvider
+
+-   PROJECT_ID
+
+    > When use HDWalletProvider
+
+-   ACCOUNT_INDEX (Default: 0)
+
+    > When use HDWalletProvider
