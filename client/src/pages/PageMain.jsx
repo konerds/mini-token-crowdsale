@@ -41,7 +41,12 @@ function PageMain() {
                     <div className={styles.container}>
                         <h1>Konerd Token Sale</h1>
                         <h2>ERC-20 Protocol</h2>
+                        <hr />
                         <p>This dapp will work with the Sepolia Ethereum Test Network</p>
+                        <p>
+                            You can't buy without KYC Verification, KYC Verify request feature for whitelisting will be
+                            added soon.
+                        </p>
                         <hr />
                         {state?.accounts?.[0] === walletAddressOfOwner && (
                             <div className={styles.addingKYCWhitelist}>
@@ -68,7 +73,7 @@ function PageMain() {
                                 You currently have <b>{balanceOfKNT} KNT</b>
                             </p>
                             <p>
-                                If you want to buy KDT, send <b>Wei</b> to this address: {addressForBuying}
+                                If you want to buy KNT, send <b>Wei</b> to this address: {addressForBuying}
                             </p>
                             <p className={styles.danger}>
                                 ※ Must send Wei unit, not Ether (1 Wei = 0.000000000000000001 Eth)
