@@ -42,7 +42,7 @@ function EthProvider({ children }) {
                 data: {
                     isLoaded: true,
                     web3,
-                    accounts,
+                    currentAccount: accounts[0],
                     networkID,
                     token: contractKonerdToken,
                     crowdsale: contractKonerdTokenCrowdsale,
@@ -67,14 +67,27 @@ function EthProvider({ children }) {
         tryInit();
     }, [init]);
     useEffect(() => {
-        const events = ['chainChanged', 'accountsChanged'];
-        const handleChange = () => {
-            init(state.artifact);
-        };
-        events.forEach((e) => window.ethereum?.on(e, handleChange));
-        return () => {
-            events.forEach((e) => window.ethereum.removeListener(e, handleChange));
-        };
+        if (window.ethereum) {
+            const events = ['chainChanged', 'networkChanged'];
+            const handleChangeInit = () => {
+                init(state.artifact);
+            };
+            const handleChangeFetch = () => {
+                init(state.artifact);
+                dispatch({
+                    type: actions.fetch,
+                    data: {
+                        currentAccount: window.ethereum.selectedAddress,
+                    },
+                });
+            };
+            events.forEach((e) => window.ethereum.on(e, handleChangeInit));
+            window.ethereum.on('accountsChanged', handleChangeFetch);
+            return () => {
+                events.forEach((e) => window.ethereum.removeListener(e, handleChangeInit));
+                window.ethereum.removeListener('accountsChanged', handleChangeFetch);
+            };
+        }
     }, [init, state.artifact]);
     return (
         <EthContext.Provider

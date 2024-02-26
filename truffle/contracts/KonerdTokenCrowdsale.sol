@@ -1,9 +1,9 @@
 pragma solidity 0.6.2;
 
 import "./KYCVerify.sol";
-import "./Crowdsale.sol";
+import "./MintedCrowdsale.sol";
 
-contract KonerdTokenCrowdsale is Crowdsale {
+contract KonerdTokenCrowdsale is MintedCrowdsale {
     KYCVerify kyc;
 
     constructor(

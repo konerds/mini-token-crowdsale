@@ -5,8 +5,11 @@
     "scripts": {
         "start:dev": "truffle develop",
         "migrate:dev": "truffle migrate --network develop",
+        "migrate:dev:reset": "truffle migrate --network develop --reset",
         "migrate:goerli_infura": "truffle migrate --network goerli_infura",
+        "migrate:goerli_infura:reset": "truffle migrate --network goerli_infura --reset",
         "migrate:sepolia_infura": "truffle migrate --network sepolia_infura",
+        "migrate:sepolia_infura:reset": "truffle migrate --network sepolia_infura --reset",
         "test": "truffle test"
     },
     "dependencies": {
