@@ -94,7 +94,7 @@ function PageMain() {
                                 <h2>ERC-20 Protocol</h2>
                                 <hr />
                                 <p>This dapp will work with the Sepolia Ethereum Test Network.</p>
-                                {!isKYCVerified && (
+                                {!isOwner && !isKYCVerified && (
                                     <>
                                         <p>You can't buy without KYC Verification.</p>
                                         <p>Please do KYC Verify by clicking the button below.</p>
